@@ -1,0 +1,36 @@
+.cust-dash { max-width: 1100px; }
+.dash-page-header { margin-bottom: 2rem; }
+.dash-page-header h1 { font-size: 1.75rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
+.dash-page-header p { color: rgba(255,255,255,0.4); font-size: 0.9rem; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+
+.dash-quick-actions h2, .dash-cart-preview h2, .dash-section-header h2 {
+  font-size: 1.1rem; font-weight: 700; color: rgba(255,255,255,0.85); margin-bottom: 1rem;
+}
+.quick-actions-grid { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2.5rem; }
+.quick-action-card {
+  display: flex; align-items: center; gap: 1rem;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 1.1rem 1.25rem; text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.quick-action-card:hover { border-color: rgba(99,179,237,0.3); background: rgba(99,179,237,0.05); }
+.quick-action-card > svg:first-child { font-size: 1.75rem; color: var(--primary); flex-shrink: 0; }
+.quick-action-card div { flex: 1; }
+.quick-action-card h3 { font-size: 0.95rem; font-weight: 600; color: #fff; margin-bottom: 0.2rem; }
+.quick-action-card p { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+.quick-action-arrow { color: rgba(255,255,255,0.25); font-size: 1.1rem; flex-shrink: 0; }
+
+.dash-section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+.cart-preview-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.cart-preview-item {
+  display: flex; align-items: center; gap: 1rem;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px; padding: 1rem;
+}
+.cart-preview-icon { font-size: 1.5rem; color: var(--primary); flex-shrink: 0; }
+.cart-preview-item div { flex: 1; }
+.cart-preview-item p { font-size: 0.9rem; color: rgba(255,255,255,0.8); font-weight: 500; margin-bottom: 0.15rem; }
+.cart-preview-item span { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+.cart-preview-item strong { color: var(--primary); font-size: 0.9rem; }

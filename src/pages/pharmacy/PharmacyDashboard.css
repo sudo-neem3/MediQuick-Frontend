@@ -1,0 +1,19 @@
+.pharmacy-dash { max-width: 1100px; }
+.dash-section { margin-top: 2.5rem; }
+.dash-section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.1rem; }
+.dash-section-header h2 { font-size: 1.1rem; font-weight: 700; color: rgba(255,255,255,0.85); }
+.no-data { color: rgba(255,255,255,0.3); font-size: 0.875rem; padding: 2rem 0; text-align: center; }
+
+.simple-table-wrap { overflow-x: auto; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08); }
+.simple-table { width: 100%; border-collapse: collapse; }
+.simple-table th {
+  background: rgba(255,255,255,0.04); padding: 0.85rem 1rem;
+  font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.4);
+  text-transform: uppercase; letter-spacing: 0.05em; text-align: left;
+}
+.simple-table td { padding: 0.85rem 1rem; font-size: 0.875rem; color: rgba(255,255,255,0.75); border-top: 1px solid rgba(255,255,255,0.05); }
+.simple-table tr:hover td { background: rgba(255,255,255,0.02); }
+.status-pill {
+  padding: 0.2rem 0.65rem; border-radius: 999px; font-size: 0.72rem; font-weight: 600;
+  text-transform: capitalize; background: rgba(99,179,237,0.15); color: var(--primary);
+}

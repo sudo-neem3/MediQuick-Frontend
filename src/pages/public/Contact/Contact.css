@@ -1,0 +1,35 @@
+.contact-page { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; }
+.contact-page__header { text-align: center; margin-bottom: 3rem; }
+.contact-page__header h1 { font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+.contact-page__header p { color: rgba(255,255,255,0.45); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 2.5rem; }
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+
+.contact-info { display: flex; flex-direction: column; gap: 1.25rem; }
+.contact-info__item {
+  display: flex; gap: 1rem; align-items: flex-start;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 1.25rem;
+}
+.contact-info__icon {
+  width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
+  background: color-mix(in srgb, var(--primary) 15%, transparent);
+  color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+}
+.contact-info__label { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.2rem; }
+.contact-info__value { font-size: 0.9rem; color: rgba(255,255,255,0.85); font-weight: 500; }
+
+.contact-form {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px; padding: 2rem; display: flex; flex-direction: column; gap: 1.1rem;
+}
+.contact-form h2 { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
+.contact-form input, .contact-form textarea {
+  width: 100%; padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; color: #fff; font-size: 0.9rem; font-family: inherit;
+  outline: none; resize: vertical; transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary); }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(255,255,255,0.25); }

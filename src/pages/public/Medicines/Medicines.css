@@ -1,0 +1,48 @@
+.medicines-page { max-width: 1280px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+.medicines-page__header { margin-bottom: 2rem; }
+.medicines-page__header h1 { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem; }
+.medicines-page__header p { color: rgba(255,255,255,0.45); }
+
+.medicines-filters { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.search-wrap, .filter-wrap {
+  display: flex; align-items: center; gap: 0.6rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; padding: 0 1rem;
+  transition: border-color 0.2s;
+}
+.search-wrap { flex: 1; min-width: 200px; }
+.search-wrap:focus-within, .filter-wrap:focus-within { border-color: var(--primary); }
+.search-wrap svg, .filter-wrap svg { color: rgba(255,255,255,0.3); flex-shrink: 0; }
+.search-wrap input, .filter-wrap select {
+  background: none; border: none; color: #fff;
+  font-size: 0.9rem; font-family: inherit;
+  padding: 0.75rem 0; outline: none; width: 100%;
+}
+.filter-wrap select option { background: #1a1f30; }
+.search-wrap input::placeholder { color: rgba(255,255,255,0.25); }
+.medicines-count { color: rgba(255,255,255,0.35); font-size: 0.82rem; margin-bottom: 1.25rem; }
+
+.medicines-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; }
+.med-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.med-card:hover { border-color: rgba(99,179,237,0.3); transform: translateY(-3px); }
+.med-card__cat {
+  display: inline-block; font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  padding: 0.2rem 0.6rem; border-radius: 999px; width: fit-content;
+}
+.med-card__icon { font-size: 2.5rem; color: rgba(99,179,237,0.3); }
+.med-card__name { font-size: 1rem; font-weight: 700; color: #fff; }
+.med-card__desc { font-size: 0.82rem; color: rgba(255,255,255,0.4); flex: 1; }
+.med-card__footer { display: flex; align-items: center; justify-content: space-between; margin-top: 0.25rem; }
+.med-card__price { font-size: 1.1rem; font-weight: 700; color: var(--primary); }
+.med-card__stock { font-size: 0.75rem; font-weight: 500; }
+.med-card__stock.in { color: #10b981; }
+.med-card__stock.out { color: #ef4444; }
+.empty-state { grid-column: 1/-1; text-align: center; padding: 4rem; color: rgba(255,255,255,0.25); }
+.empty-state svg { font-size: 4rem; margin-bottom: 1rem; display: block; margin-left: auto; margin-right: auto; }

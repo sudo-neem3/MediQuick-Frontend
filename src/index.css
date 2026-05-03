@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ── Design Tokens ──────────────────────────────────────────────── */
+:root {
+  --primary: #63b3ed;
+  --primary-dark: #3182ce;
+  --bg: #0a0e1a;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.45);
+  --border: rgba(255, 255, 255, 0.08);
+  --radius: 12px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Reset ──────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { cursor: pointer; font-family: inherit; }
+input, textarea, select { font-family: inherit; }
+
+/* ── Layout ─────────────────────────────────────────────────────── */
+.layout { min-height: 100vh; display: flex; flex-direction: column; }
+.layout__main { flex: 1; }
+
+/* ── Utility Buttons ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s, background 0.2s;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.btn--primary { background: var(--primary); color: #fff; }
+.btn--primary:hover { opacity: 0.88; }
+
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.btn--ghost:hover { background: rgba(255, 255, 255, 0.11); color: #fff; }
+
+.btn--outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+.btn--outline:hover { background: rgba(99, 179, 237, 0.1); }
+
+.btn--danger { background: #ef4444; color: #fff; }
+.btn--danger:hover { opacity: 0.85; }
+
+.btn--full { width: 100%; }
+
+/* ── Gradient Text ──────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary) 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.12); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* ── Form globals (shared) ──────────────────────────────────────── */
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label { font-size: 0.82rem; font-weight: 500; color: rgba(255, 255, 255, 0.6); }
+.form-error { font-size: 0.75rem; color: #f87171; }
+
+/* ── Shared dashboard header ─────────────────────────────────────── */
+.dash-page-header { margin-bottom: 2rem; }
+.dash-page-header h1 { font-size: 1.75rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
+.dash-page-header p { color: rgba(255, 255, 255, 0.4); font-size: 0.9rem; }
+
+/* ── Stats grid ─────────────────────────────────────────────────── */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+
+/* ── Quick actions ───────────────────────────────────────────────── */
+.dash-quick-actions h2 { font-size: 1.1rem; font-weight: 700; color: rgba(255, 255, 255, 0.85); margin-bottom: 1rem; }
+.quick-actions-grid { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2.5rem; }
+.quick-action-card {
+  display: flex; align-items: center; gap: 1rem;
+  background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px; padding: 1.1rem 1.25rem; text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.quick-action-card:hover { border-color: rgba(99, 179, 237, 0.3); background: rgba(99, 179, 237, 0.05); }
+.quick-action-card > svg:first-child { font-size: 1.75rem; color: var(--primary); flex-shrink: 0; }
+.quick-action-card div { flex: 1; }
+.quick-action-card h3 { font-size: 0.95rem; font-weight: 600; color: #fff; margin-bottom: 0.2rem; }
+.quick-action-card p { font-size: 0.8rem; color: rgba(255, 255, 255, 0.4); }
+.quick-action-arrow { color: rgba(255, 255, 255, 0.25); font-size: 1.1rem; flex-shrink: 0; }
+
+/* ── See all link ─────────────────────────────────────────────────── */
+.see-all { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--primary); font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: gap 0.2s; }
+.see-all:hover { gap: 0.6rem; }
+
+/* ── Shared table styles ────────────────────────────────────────── */
+.simple-table-wrap { overflow-x: auto; border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.08); }
+.simple-table { width: 100%; border-collapse: collapse; }
+.simple-table th { background: rgba(255, 255, 255, 0.04); padding: 0.85rem 1rem; font-size: 0.78rem; font-weight: 600; color: rgba(255, 255, 255, 0.4); text-transform: uppercase; letter-spacing: 0.05em; text-align: left; }
+.simple-table td { padding: 0.85rem 1rem; font-size: 0.875rem; color: rgba(255, 255, 255, 0.75); border-top: 1px solid rgba(255, 255, 255, 0.05); }
+.simple-table tr:hover td { background: rgba(255, 255, 255, 0.02); }
+.status-pill { padding: 0.2rem 0.65rem; border-radius: 999px; font-size: 0.72rem; font-weight: 600; text-transform: capitalize; background: rgba(99, 179, 237, 0.15); color: var(--primary); }
+
+/* ── Empty state ─────────────────────────────────────────────────── */
+.empty-state { grid-column: 1 / -1; text-align: center; padding: 4rem; color: rgba(255, 255, 255, 0.25); }
+.empty-state svg { font-size: 4rem; margin: 0 auto 1rem; display: block; }
+.empty-state p { font-size: 0.95rem; }
+
+/* ── Cart empty ──────────────────────────────────────────────────── */
+.cart-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 5rem 2rem; gap: 1rem; text-align: center; }
+.cart-empty svg { font-size: 4rem; color: rgba(255, 255, 255, 0.15); }
+.cart-empty h2 { font-size: 1.5rem; font-weight: 700; color: rgba(255, 255, 255, 0.7); }
+.cart-empty p { color: rgba(255, 255, 255, 0.35); }
+
+/* ── No data ─────────────────────────────────────────────────────── */
+.no-data { color: rgba(255, 255, 255, 0.3); font-size: 0.875rem; padding: 2rem 0; text-align: center; }
+
+/* ── Icon button ─────────────────────────────────────────────────── */
+.icon-btn { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: rgba(255, 255, 255, 0.6); font-size: 1.1rem; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; }
+.icon-btn.danger:hover { background: rgba(239, 68, 68, 0.15); color: #ef4444; border-color: rgba(239, 68, 68, 0.3); }
